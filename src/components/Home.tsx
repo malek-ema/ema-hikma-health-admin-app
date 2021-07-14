@@ -94,7 +94,7 @@ const Home = (props: any) => {
   }
 
   const handleLogout = () => {
-    fetch(`http://localhost:8080/admin_api/logout`, {
+    fetch(`http://34.149.150.192:8080/admin_api/logout`, {
       method: 'POST',
       headers: {
         Authorization: token
@@ -132,7 +132,7 @@ const Home = (props: any) => {
   }
 
   const deleteUser = async (email: string): Promise<any> => {
-    const response = await fetch(`http://localhost:8080/admin_api/user`, {
+    const response = await fetch(`http://34.149.150.192:8080/admin_api/user`, {
 
       method: 'DELETE',
       headers: {
@@ -147,7 +147,7 @@ const Home = (props: any) => {
   }
 
   const getUsers = async (): Promise<User[]> => {
-    const response = await fetch(`http://localhost:8080/admin_api/all_users`, {
+    const response = await fetch(`http://34.149.150.192:8080/admin_api/all_users`, {
       method: 'GET',
       headers: {
         Authorization: token

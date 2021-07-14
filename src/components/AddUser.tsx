@@ -70,7 +70,7 @@ const AddUser = (props: any) => {
   };
 
   const addUser = async (): Promise<any> => {
-    const response = await fetch(`http://localhost:8080/admin_api/user`, {
+    const response = await fetch(`http://34.149.150.192:8080/admin_api/user`, {
       method: 'POST',
       headers: {
         Authorization: state.token,

@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ema-hikma-health-admin-app
+  name: ema-hikma-health-admin-app
+  namespace: default
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 2
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: ema-hikma-health-admin-app
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: ema-hikma-health-admin-app
+    spec:
+      containers:
+      - image: gcr.io/ema-hikma-health-app/admin-app:8f412595714661d0626da42c9fb7bf31510a69aa
+        imagePullPolicy: IfNotPresent
+        name: ema-hikma-health-admin-app
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        ports:
+          - containerPort: 3000
+            protocol: TCP
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          periodSeconds: 30
+          successThreshold: 1
+          failureThreshold: 3
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          periodSeconds: 30
+          successThreshold: 1
+          failureThreshold: 5
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30

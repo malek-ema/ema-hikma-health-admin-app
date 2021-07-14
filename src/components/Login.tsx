@@ -77,7 +77,7 @@ const Login = () => {
   };
 
   const remoteLogin = async (): Promise<any> => {
-    const response = await fetch(`${process.env.REACT_APP_INSTANCE_URL}/admin_api/login`, {
+    const response = await fetch(`http://localhost:8080/admin_api/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

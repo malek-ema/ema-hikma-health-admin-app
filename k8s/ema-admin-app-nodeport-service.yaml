@@ -9,4 +9,4 @@ spec:
       port: 80
       targetPort: 3000
   selector:
-    app: ema-admin-app
+    app: ema-hikma-health-admin-app

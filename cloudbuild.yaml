@@ -6,8 +6,8 @@ steps:
           '.' ]
 
 - name: 'gcr.io/cloud-builders/kubectl'
- env: ['CLOUDSDK_COMPUTE_ZONE=europe-central2-a', 'CLOUDSDK_CONTAINER_CLUSTER=ema-prod']
- args: ['set', 'image', 'deployment/ema-hikma-health-admin-app',
+  env: ['CLOUDSDK_COMPUTE_ZONE=europe-central2-a', 'CLOUDSDK_CONTAINER_CLUSTER=ema-prod']
+  args: ['set', 'image', 'deployment/ema-hikma-health-admin-app',
        'ema-hikma-health-admin-app=gcr.io/$PROJECT_ID/ema-hikma-health-admin-app:$COMMIT_SHA']
 
 

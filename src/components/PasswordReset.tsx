@@ -76,7 +76,7 @@ const PasswordReset = (props: any) => {
   };
 
   const changePassword = async (): Promise<any> => {
-    const response = await fetch(`http://34.149.150.192:8080/admin_api/change_password`, {
+    const response = await fetch(`http://34.149.150.192:80/admin_api/change_password`, {
       method: 'POST',
       headers: {
         Authorization: state.token
@@ -84,7 +84,7 @@ const PasswordReset = (props: any) => {
       body: JSON.stringify({
         "email": state.user.email,
         "new_password": password,
-        
+
       })
     });
     return await response.json();

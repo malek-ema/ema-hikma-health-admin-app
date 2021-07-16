@@ -77,7 +77,7 @@ const Login = () => {
   };
 
   const remoteLogin = async (): Promise<any> => {
-    const response = await fetch(`http://34.149.150.192:8080/admin_api/login`, {
+    const response = await fetch(`http://34.149.150.192:80/admin_api/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

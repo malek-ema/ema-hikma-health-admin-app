@@ -84,6 +84,7 @@ const PasswordReset = (props: any) => {
       body: JSON.stringify({
         "email": state.user.email,
         "new_password": password,
+        
       })
     });
     return await response.json();

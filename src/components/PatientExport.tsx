@@ -87,7 +87,7 @@ const PatientExport = (props: any) => {
   }
 
   const getPatients = async (): Promise<User[]> => {
-    const response = await fetch(`http://34.149.150.192:80/admin_api/all_patients`, {
+    const response = await fetch(`http://admin-api.endlessmedicaladvantage.org/admin_api/all_patients`, {
       method: 'GET',
       headers: {
         Authorization: token
@@ -97,7 +97,7 @@ const PatientExport = (props: any) => {
   }
 
   const searchPatients = async () => {
-    fetch(`http://34.149.150.192:80/admin_api/search_patients`, {
+    fetch(`http://admin-api.endlessmedicaladvantage.org/admin_api/search_patients`, {
       method: 'POST',
       headers: {
         Authorization: token
@@ -117,7 +117,7 @@ const PatientExport = (props: any) => {
   }
 
   const handleExportAllPatients = () => {
-    fetch(`http://34.149.150.192:80/admin_api/export`, {
+    fetch(`http://admin-api.endlessmedicaladvantage.org/admin_api/export`, {
       method: 'POST',
       headers: {
         Authorization: token
@@ -130,7 +130,7 @@ const PatientExport = (props: any) => {
   }
 
   const handleExportSinglePatient = (patientId: string) => {
-    fetch(`http://34.149.150.192:80/admin_api/export_patient`, {
+    fetch(`http://admin-api.endlessmedicaladvantage.org/admin_api/export_patient`, {
       method: 'POST',
       headers: {
         Authorization: token

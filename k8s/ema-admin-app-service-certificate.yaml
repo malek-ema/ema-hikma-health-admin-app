@@ -4,4 +4,4 @@ metadata:
   name: ema-admin-app-certificate
 spec:
   domains:
-    - "api-admin.endlessmedicaladvantage.org"
+    - "admin.endlessmedicaladvantage.org"

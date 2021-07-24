@@ -70,7 +70,7 @@ const AddUser = (props: any) => {
   };
 
   const addUser = async (): Promise<any> => {
-    const response = await fetch(`http://api.endlessmedicaladvantage.org/admin_api/user`, {
+    const response = await fetch(`https://api.endlessmedicaladvantage.org/admin_api/user`, {
       method: 'POST',
       headers: {
         Authorization: state.token,

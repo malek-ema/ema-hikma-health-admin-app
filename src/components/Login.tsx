@@ -77,7 +77,7 @@ const Login = () => {
   };
 
   const remoteLogin = async (): Promise<any> => {
-    const response = await fetch(`http://api.endlessmedicaladvantage.org/admin_api/login`, {
+    const response = await fetch(`https://api.endlessmedicaladvantage.org/admin_api/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
